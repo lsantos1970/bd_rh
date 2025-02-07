@@ -56,7 +56,7 @@ cd bd_rh
    ```sh
    npm start
    ```
-4. Normalmente a API ficará acessível em `http://localhost:3000/`
+4. A Aplicação ficará acessível em `http://localhost:3000/`
 
 ### Frontend (bd_rh_frontend)
 
@@ -74,22 +74,3 @@ cd bd_rh
    ```
 4. A aplicação ficará disponível em `http://localhost:8080/`
 
-
-## Contribuindo
-
-1. Faça um **fork** do projeto.
-2. Crie uma *branch* para a sua *feature*:
-   ```sh
-   git checkout -b feature/AmazingFeature
-   ```
-3. Commit as suas mudanças:
-   ```sh
-   git commit -m 'Add some AmazingFeature'
-   ```
-4. Faça *push* para a *branch*:
-   ```sh
-   git push origin feature/AmazingFeature
-   ```
-5. Abra um *Pull Request* para análise.
-
----
