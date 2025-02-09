@@ -1,7 +1,4 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="@/assets/logo_PLANAPP.png" />
-  </div>
   <nav>
     <router-link to="/">Home</router-link> |
     <router-link to="/colaboradores">Colaboradores</router-link> |

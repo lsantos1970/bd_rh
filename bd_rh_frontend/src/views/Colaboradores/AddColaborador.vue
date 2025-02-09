@@ -19,7 +19,7 @@
                 required
               />
             </div>
-
+            <p></p>
             <!-- Nome Completo -->
             <div class="form-group">
               <label for="txtNome">Nome Completo</label>
@@ -32,7 +32,7 @@
                 required
               />
             </div>
-
+            <p></p>
             <!-- Email -->
             <div class="form-group">
               <label for="txtEmail">Email</label>
@@ -45,7 +45,7 @@
                 required
               />
             </div>
-
+            <p></p>
             <!-- Cartão de Cidadão -->
             <div class="form-group">
               <label for="txtCC">Cartão de Cidadão</label>
@@ -58,7 +58,7 @@
                 required
               />
             </div>
-
+            <p></p>
             <!-- NIF -->
             <div class="form-group">
               <label for="txtNIF">NIF</label>
@@ -71,7 +71,7 @@
                 required
               />
             </div>
-
+            <p></p>
             <!-- Género -->
             <div class="form-group">
               <label for="txtGenero">Género</label>
@@ -83,7 +83,7 @@
                 placeholder="Insira o género"
               />
             </div>
-
+            <p></p>
             <!-- Data de Nascimento -->
             <div class="form-group">
               <label for="txtDataNascimento">Data de Nascimento</label>
@@ -95,7 +95,7 @@
                 required
               />
             </div>
-
+            <p></p>
             <!-- Nível de Escolaridade -->
             <div class="form-group">
               <label for="txtNivelEscolaridade">Nível de Escolaridade</label>
@@ -108,7 +108,7 @@
                 required
               />
             </div>
-
+            <p></p>
             <!-- Ano Início Profissional -->
             <div class="form-group">
               <label for="txtAnoInicio">Ano de Início Profissional</label>
@@ -121,7 +121,7 @@
                 required
               />
             </div>
-
+            <p></p>
             <!-- Situação Atual -->
             <div class="form-group">
               <label for="txtSituacaoAtual">Situação Atual</label>
@@ -134,7 +134,7 @@
                 required
               />
             </div>
-
+            <p></p>
             <!-- Modalidade de Recrutamento -->
             <div class="form-group">
               <label for="txtModalidadeRecrutamento"
@@ -149,7 +149,7 @@
                 required
               />
             </div>
-
+            <p></p>
             <!-- Categoria Atual -->
             <div class="form-group">
               <label for="txtCategoriaAtual">Categoria Atual</label>
@@ -162,7 +162,7 @@
                 required
               />
             </div>
-
+            <p></p>
             <!-- Regime de Contrato Atual -->
             <div class="form-group">
               <label for="txtRegimeContratoAtual"
@@ -177,7 +177,7 @@
                 required
               />
             </div>
-
+            <p></p>
             <!-- Tipo de Contrato Atual -->
             <div class="form-group">
               <label for="txtTipoContratoAtual">Tipo de Contrato Atual</label>
@@ -190,7 +190,7 @@
                 required
               />
             </div>
-
+            <p></p>
             <!-- Modalidade de Horário Atual -->
             <div class="form-group">
               <label for="txtModalidadeHorarioAtual"
@@ -205,7 +205,7 @@
                 required
               />
             </div>
-
+            <p></p>
             <!-- Equipa Atual -->
             <div class="form-group">
               <label for="txtEquipaAtual">Equipa Atual</label>
@@ -218,7 +218,7 @@
                 required
               />
             </div>
-
+            <p></p>
             <button type="submit" class="btn btn-primary">
               Adicionar Colaborador
             </button>

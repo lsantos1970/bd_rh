@@ -1,4 +1,7 @@
 <template>
+  <div class="home">
+    <img alt="Vue logo" src="@/assets/logo_PLANAPP.png" />
+  </div>
   <section class="page-section">
     <b-container>
       <!-- Cabeçalho usando componente externo (pode ser removido/alterado) -->
@@ -24,11 +27,11 @@
         </b-col>
         <b-col cols="1"></b-col>
       </b-row>
-
+      <p></p>
+      <p></p>
       <!-- TABELA -->
       <b-row>
-        <b-col cols="1"></b-col>
-        <b-col>
+        <b-col offset="2" cols="12">
           <table class="table table-striped">
             <thead class="thead-dark">
               <tr>
