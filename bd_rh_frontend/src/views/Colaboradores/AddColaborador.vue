@@ -75,13 +75,10 @@
             <!-- Género -->
             <div class="form-group">
               <label for="txtGenero">Género</label>
-              <input
-                v-model="colaborador.genero"
-                type="text"
-                class="form-control"
-                id="txtGenero"
-                placeholder="Insira o género"
-              />
+              <select name="" id="" v-model="colaborador.genero">
+                <option value="Masculino">Masculino</option>
+                <option value="Feminino">Feminino</option>
+              </select>
             </div>
             <p></p>
             <!-- Data de Nascimento -->
@@ -208,14 +205,11 @@
             <p></p>
             <!-- Equipa Atual -->
             <div class="form-group">
-              <label for="txtEquipaAtual">Equipa Atual</label>
+              <label for="equipa_atual">Equipa atual</label>
               <input
+                id="equipa_atual"
                 v-model="colaborador.equipa_atual"
                 type="text"
-                class="form-control"
-                id="txtEquipaAtual"
-                placeholder="Insira a equipa atual"
-                required
               />
             </div>
             <p></p>
@@ -242,8 +236,6 @@ export default {
     return {
       colaborador: {
         // Propriedades do colaborador conforme o esquema
-        // Use a mesma chave que espera o backend
-        // (Observe a capitalização: por exemplo, "NAP_id" para correspondência exata)
         NAP_id: null,
         nome_completo: "",
         email: "",
@@ -279,6 +271,49 @@ export default {
 
 <style scoped>
 /* Adicione seus estilos aqui, se necessário */
+form {
+  max-width: 500px;
+  margin: 30px auto;
+  background: white;
+  text-align: left;
+  padding: 40px;
+  border-radius: 10px;
+}
+label {
+  font-weight: bold;
+  color: #aaa;
+  display: inline-block;
+  margin: 25 px 0 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+input,
+select {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  background: #f9f9f9;
+  border: 1px solid #eaeaea;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+label[type="checkbox"] {
+  font-weight: bold;
+  color: #aaa;
+  display: inline-block;
+  margin: 25 px 0 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+input[type="checkbox"] {
+  margin-right: 10px;
+  display: inline-block;
+  width: 16px;
+  position: relative;
+  top: 2px;
+}
 .page-section {
   padding: 20px;
 }

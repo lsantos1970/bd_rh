@@ -134,4 +134,14 @@ export default {
 .mt-3 {
   margin-top: 1rem;
 }
+PT-4 {
+  padding-top: 1rem;
+  font-weight: bold;
+  color: #aaa;
+  display: inline-block;
+  margin: 25 px 0 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
 </style>
