@@ -10,6 +10,9 @@ import AboutView from "@/components/AboutView.vue";
 import FormacaoView from "@/views/Formacao/FormacaoView.vue";
 import AusenciasView from "@/views/Ausencias/AusenciasView.vue";
 import AvaliacaoView from "@/views/Avaliacao/AvaliacaoView.vue";
+import ListaPedidos from "@/views/Pedidos/ListaPedidos.vue";
+import AddPedido from "@/views/Pedidos/AddPedido.vue";
+import EditPedido from "@/views/Pedidos/EditPedido.vue";
 
 const routes = [
   {
@@ -61,6 +64,21 @@ const routes = [
     path: "/avaliacao",
     name: "AvaliacaoView",
     component: AvaliacaoView,
+  },
+  {
+    path: "/pedidos",
+    name: "ListaPedidos",
+    component: ListaPedidos,
+  },
+  {
+    path: "/pedidos/add",
+    name: "AddPedido",
+    component: AddPedido,
+  },
+  {
+    path: "/pedidos/:id/edit",
+    name: "EditPedido",
+    component: EditPedido,
   },
 ];
 

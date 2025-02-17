@@ -15,9 +15,12 @@ connectDB();
 
 // Importa as rotas
 const colaboradorRoutes = require('./routes/colaborador.routes');
+const pedidoRoutes = require('./routes/pedido.routes');
 
-// Rotas
+// Usar rotas
 app.use('/api/colaboradores', colaboradorRoutes);
+app.use('/api/pedidos', pedidoRoutes);
+
 
 app.get('/', (req, res) => {
   res.send('API RH a funcionar!');

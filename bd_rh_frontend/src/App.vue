@@ -1,6 +1,7 @@
 <template>
   <nav>
     <router-link to="/">Home</router-link> |
+    <router-link to="/pedidos">Pedidos</router-link> |
     <router-link to="/colaboradores">Colaboradores</router-link> |
     <router-link to="/formacao">Formação</router-link> |
     <router-link to="/ausencias">Ausências</router-link> |

@@ -17,6 +17,10 @@
   <h2>Avaliação</h2>
   <router-link to="/">Adicionar Avaliação</router-link> |
   <router-link to="/">Lista de Avaliação</router-link> |
+  <h2>Pedidos</h2>
+  <router-link to="/pedidos/add">Adicionar Pedidos</router-link> |
+  <router-link to="/pedidos">Lista de Pedidos</router-link> |
+
   <p></p>
   <p>
     <a href="https://planapp.gov.pt" target="_blank" rel="noopener">

@@ -142,6 +142,7 @@
       </div>
 
       <button type="submit">Guardar</button>
+      <button class="btn btn-primary" @click="exportarPdf">Exportar PDF</button>
     </form>
   </div>
 </template>
@@ -149,6 +150,7 @@
 <script>
 import { getColaboradorById } from "@/services/colaboradorService.js";
 import { EDIT_COLABORADOR } from "@/store/colaboradores/colaborador.constants.js";
+import jsPDF from "jspdf"; // Importar jsPDF
 
 export default {
   name: "EditColaborador",
@@ -182,6 +184,23 @@ export default {
       } finally {
         this.loading = false;
       }
+    },
+    exportarPDF() {
+      if (!this.colaborador) return;
+
+      // 1) Criar instância do jsPDF
+      const doc = new jsPDF();
+
+      // 2) Exemplo de adicionar texto. (x=10, y=20)
+      doc.text(`Colaborador: ${this.colaborador.nome_completo}`, 10, 20);
+      doc.text(`NAP: ${this.colaborador.NAP_id}`, 10, 30);
+      doc.text(`Email: ${this.colaborador.email}`, 10, 40);
+      doc.text(`Data Nasc: ${this.colaborador.data_nascimento}`, 10, 50);
+      // etc. adiciona as propriedades que quiseres
+
+      // 3) Salvar o ficheiro (nome do PDF)
+      // Poderias usar algo dinâmico, ex. "colaborador-1234.pdf"
+      doc.save(`colaborador_${this.colaborador.NAP_id}.pdf`);
     },
   },
   created() {
