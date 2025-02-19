@@ -80,6 +80,21 @@ const routes = [
     name: "EditPedido",
     component: EditPedido,
   },
+  {
+    path: "/formacoes",
+    name: "ListaFormacoes",
+    component: () => import("@/views/Formacao/ListaFormacoes.vue"),
+  },
+  {
+    path: "/formacao/add",
+    name: "AddFormacao",
+    component: () => import("@/views/Formacao/AddFormacao.vue"),
+  },
+  {
+    path: "/formacao/edit/:id",
+    name: "EditFormacao",
+    component: () => import("@/views/Formacao/EditFormacao.vue"),
+  },
 ];
 
 const router = createRouter({

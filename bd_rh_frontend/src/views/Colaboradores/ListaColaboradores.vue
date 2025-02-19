@@ -1,12 +1,6 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="@/assets/logo_PLANAPP.png" />
-  </div>
   <section class="page-section">
     <b-container>
-      <!-- Cabeçalho usando componente externo (pode ser removido/alterado) -->
-      <HeaderPage title="Gestão de Colaboradores" />
-
       <!-- MENU TOPO -->
       <b-row class="mb-4">
         <b-col cols="1"></b-col>
@@ -16,19 +10,21 @@
             :to="{ name: 'AddColaborador' }"
             v-slot="{ href, navigate }"
           >
-            <button
+            <v-btn
               :href="href"
               @click="navigate"
               class="btn btn-outline-success mr-2 mt-2"
             >
               <i class="fas fa-plus-square"></i> ADICIONAR COLABORADOR
-            </button>
+            </v-btn>
           </router-link>
         </b-col>
         <b-col cols="1"></b-col>
       </b-row>
-      <p></p>
-      <p></p>
+
+      <!-- Cabeçalho usando componente externo (pode ser removido/alterado) -->
+      <HeaderPage title="Lista de Colaboradores" />
+
       <!-- TABELA -->
       <b-row>
         <b-col offset="2" cols="12">
@@ -53,22 +49,22 @@
 
                 <td>
                   <!-- Botão Ver -->
-                  <button
+                  <v-btn
                     @click="viewColaborador(colab._id)"
-                    type="button"
+                    type="v-btn"
                     class="btn btn-outline-success mr-2"
                   >
                     <i class="fas fa-search"></i> VER
-                  </button>
+                  </v-btn>
 
                   <!-- Botão Remover -->
-                  <button
+                  <v-btn
                     @click="removeColaborador(colab._id)"
-                    type="button"
+                    type="v-btn"
                     class="btn btn-outline-danger mr-2"
                   >
                     <i class="fas fa-trash-alt"></i> REMOVER
-                  </button>
+                  </v-btn>
                 </td>
               </tr>
             </tbody>
@@ -129,19 +125,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.mt-3 {
-  margin-top: 1rem;
-}
-PT-4 {
-  padding-top: 1rem;
-  font-weight: bold;
-  color: #aaa;
-  display: inline-block;
-  margin: 25 px 0 15px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-weight: bold;
-}
-</style>

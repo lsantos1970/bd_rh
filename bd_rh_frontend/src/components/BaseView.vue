@@ -125,7 +125,7 @@
         <input id="equipa_atual" v-model="base.equipa_atual" type="text" />
       </div>
 
-      <button type="submit">Guardar</button>
+      <v-btn type="submit">Guardar</v-btn>
     </form>
   </div>
 </template>
@@ -181,7 +181,7 @@ h1 {
   margin-bottom: 0.25rem;
 }
 
-button {
+v-btn {
   margin-top: 1rem;
   padding: 0.5rem 1rem;
   cursor: pointer;

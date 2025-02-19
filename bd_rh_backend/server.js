@@ -2,6 +2,7 @@
 const express = require('express');
 const cors = require('cors');
 const connectDB = require('./config/db.config');
+const formacaoRoutes = require('./routes/formacao.routes');
 
 
 const app = express();
@@ -20,6 +21,8 @@ const pedidoRoutes = require('./routes/pedido.routes');
 // Usar rotas
 app.use('/api/colaboradores', colaboradorRoutes);
 app.use('/api/pedidos', pedidoRoutes);
+app.use('/api/formacoes', formacaoRoutes);
+
 
 
 app.get('/', (req, res) => {

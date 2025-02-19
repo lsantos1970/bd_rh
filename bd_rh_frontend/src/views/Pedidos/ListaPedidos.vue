@@ -1,15 +1,16 @@
 <template>
   <section class="page-section">
     <b-container>
-      <h2>Lista de Pedidos</h2>
-
       <router-link :to="{ name: 'AddPedido' }">
-        <button class="btn btn-success mb-3">Adicionar Pedido</button>
+        <v-btn class="btn btn-success mb-3">Adicionar Pedido</v-btn>
       </router-link>
 
-      <button @click="exportarExcel" class="btn btn-primary mb-2">
+      <v-btn @click="exportarExcel" class="btn btn-primary mb-2">
         Exportar Excel
-      </button>
+      </v-btn>
+
+      <!-- Cabeçalho usando componente externo (pode ser removido/alterado) -->
+      <HeaderPage title="Lista de Pedidos" />
 
       <table class="table table-striped">
         <thead class="thead-dark">
@@ -33,18 +34,18 @@
             <td>{{ formataData(pedido.data_fim) }}</td>
             <td>
               <!-- Exemplo de botão remover -->
-              <button
+              <v-btn
                 class="btn btn-danger btn-sm"
                 @click="removePedido(pedido._id)"
               >
                 Remover
-              </button>
+              </v-btn>
 
               <!-- Exemplo de botão para “ver” ou “editar” -->
               <router-link
                 :to="{ name: 'EditPedido', params: { id: pedido._id } }"
               >
-                <button class="btn btn-info btn-sm ml-2">Editar</button>
+                <v-btn class="btn btn-info btn-sm ml-2">Editar</v-btn>
               </router-link>
             </td>
           </tr>
@@ -55,11 +56,15 @@
 </template>
 
 <script>
+import HeaderPage from "@/components/HeaderPage.vue";
 import { listarPedidos, removerPedido } from "@/services/pedidoService.js";
 import * as XLSX from "xlsx"; // Importar SheetJS
 
 export default {
   name: "ListaPedidos",
+  components: {
+    HeaderPage,
+  },
   data() {
     return {
       pedidos: [],
