@@ -2,8 +2,8 @@
 import axios from "axios";
 
 // Ajusta se o teu backend estiver noutra porta/endereço
-const API_URL = "http://localhost:3000/api";
-//const API_URL = "http://52.172.207.146:3000/api"; // endereço/porta VM AZURE
+//const API_URL = "http://localhost:3000/api";
+const API_URL = "http://52.172.207.146:3000/api"; // endereço/porta VM AZURE
 
 // Lista todos os colaboradores
 export async function listarColaboradores() {

@@ -1,8 +1,8 @@
 // bd_rh_frontend/src/services/formacaoService.js
 import axios from "axios";
 
-const API_URL = "http://localhost:3000/api/formacoes";
-//const API_URL = "http://52.172.207.146:3000/api/formacoes"; // endereço/porta VM AZURE
+//const API_URL = "http://localhost:3000/api/formacoes";
+const API_URL = "http://52.172.207.146:3000/api/formacoes"; // endereço/porta VM AZURE
 
 export async function listarFormacoes() {
   return axios.get(API_URL);
