@@ -225,7 +225,7 @@
 
 <script>
 import HeaderPage from "@/components/HeaderPage.vue";
-import { registarColaborador } from "@/services/colaboradorService.js";
+import { criarColaborador } from "@/services/colaboradorService.js";
 
 export default {
   name: "AddColaborador",
@@ -259,7 +259,7 @@ export default {
     async addColaborador() {
       try {
         // Envia os dados conforme esperado pelo backend
-        await registarColaborador({ ...this.colaborador });
+        await criarColaborador({ ...this.colaborador });
         this.$router.push({ name: "colaboradores" });
       } catch (error) {
         console.error("Erro ao adicionar colaborador:", error);

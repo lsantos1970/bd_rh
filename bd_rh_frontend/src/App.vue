@@ -1,10 +1,13 @@
 <template>
+  <!-- Componente v-app do Vuetify que encapsula toda a aplicação -->
   <v-app>
+    <!-- Barra de navegação principal -->
     <nav>
       <div class="logo">
         <!-- Logo da aplicação -->
         <img alt="Vue logo" src="@/assets/logo_PLANAPP.png" />
       </div>
+      <!-- Links de navegação -->
       <router-link to="/">Home</router-link> |
       <router-link to="/pedidos">Pedidos</router-link> |
       <router-link to="/colaboradores">Colaboradores</router-link> |
@@ -14,8 +17,9 @@
     </nav>
     <!-- Layout principal do Vuetify -->
     <v-main>
-      <!-- v-container é opcional, mas ajuda na margem interna -->
+      <!-- Container responsivo para o conteúdo -->
       <v-container>
+        <!-- Área onde as rotas serão renderizadas -->
         <router-view />
       </v-container>
     </v-main>

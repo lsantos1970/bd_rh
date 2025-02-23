@@ -1,24 +1,34 @@
 //@/router/index.js
 import { createRouter, createWebHistory } from "vue-router";
-import HomeView from "@/views/HomeView.vue";
+import Home from "@/views/HomeView.vue";
 import ListaColaboradores from "@/views/Colaboradores/ListaColaboradores.vue";
 import AddColaborador from "@/views/Colaboradores/AddColaborador.vue";
 import AdminView from "@/components/AdminView.vue";
 import EditColaborador from "@/views/Colaboradores/EditColaborador.vue";
 import BaseView from "@/components/BaseView.vue";
 import AboutView from "@/components/AboutView.vue";
-import FormacaoView from "@/views/Formacao/FormacaoView.vue";
+//import FormacaoView from "@/views/Formacao/FormacaoView.vue";
 import AusenciasView from "@/views/Ausencias/AusenciasView.vue";
 import AvaliacaoView from "@/views/Avaliacao/AvaliacaoView.vue";
 import ListaPedidos from "@/views/Pedidos/ListaPedidos.vue";
 import AddPedido from "@/views/Pedidos/AddPedido.vue";
 import EditPedido from "@/views/Pedidos/EditPedido.vue";
+import Login from "@/views/Login.vue";
+import store from "@/store"; // Importa o store
 
 const routes = [
+  { path: "/login", name: "Login", component: Login },
+  {
+    path: "/",
+    name: "Home",
+    component: Home,
+    meta: { requiresAuth: true },
+  },
+
   {
     path: "/",
     name: "home",
-    component: HomeView,
+    component: Home,
   },
   {
     path: "/about",
@@ -49,11 +59,6 @@ const routes = [
     path: "/base",
     name: "BaseView",
     component: BaseView,
-  },
-  {
-    path: "/formacao",
-    name: "FormacaoView",
-    component: FormacaoView,
   },
   {
     path: "/ausencias",
@@ -101,5 +106,13 @@ const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
 });
-
+router.beforeEach((to, from, next) => {
+  const requiresAuth = to.matched.some((record) => record.meta.requiresAuth);
+  const token = localStorage.getItem("token") || (store && store.state.token);
+  if (requiresAuth && !token) {
+    next({ name: "Login" });
+  } else {
+    next();
+  }
+});
 export default router;
