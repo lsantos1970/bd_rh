@@ -13,7 +13,14 @@ async function criarPedido(req, res) {
 // Listar todos os pedidos
 async function listarPedidos(req, res) {
   try {
-    const pedidos = await Pedido.find();
+    let pedidos;
+    if (req.user.role === "admin") {
+      // Se for admin, retorna todos os pedidos
+      pedidos = await Pedido.find();
+    } else {
+      // Se for colaborador, retorna apenas os pedidos do usuário (assumindo que o campo nap_id está no pedido)
+      pedidos = await Pedido.find({ NAP_id: req.user.nap_id });
+    }
     return res.json(pedidos);
   } catch (error) {
     return res.status(500).json({ message: error.message });

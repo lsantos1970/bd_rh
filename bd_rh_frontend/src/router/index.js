@@ -1,4 +1,3 @@
-//@/router/index.js
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "@/views/HomeView.vue";
 import ListaColaboradores from "@/views/Colaboradores/ListaColaboradores.vue";
@@ -7,24 +6,37 @@ import AdminView from "@/components/AdminView.vue";
 import EditColaborador from "@/views/Colaboradores/EditColaborador.vue";
 import BaseView from "@/components/BaseView.vue";
 import AboutView from "@/components/AboutView.vue";
-//import FormacaoView from "@/views/Formacao/FormacaoView.vue";
+// import FormacaoView from "@/views/Formacao/FormacaoView.vue";
 import AusenciasView from "@/views/Ausencias/AusenciasView.vue";
 import AvaliacaoView from "@/views/Avaliacao/AvaliacaoView.vue";
 import ListaPedidos from "@/views/Pedidos/ListaPedidos.vue";
 import AddPedido from "@/views/Pedidos/AddPedido.vue";
 import EditPedido from "@/views/Pedidos/EditPedido.vue";
 import Login from "@/views/Login.vue";
+import registerUser from "@/views/Register.vue"; // Rota para registro de novos usuários
 import store from "@/store"; // Importa o store
 
 const routes = [
-  { path: "/login", name: "Login", component: Login },
   {
     path: "/",
+    redirect: "/login",
+  },
+  {
+    path: "/login",
+    name: "Login",
+    component: Login,
+  },
+  {
+    path: "/register",
+    name: "Register",
+    component: registerUser,
+  },
+  {
+    path: "/home",
     name: "Home",
     component: Home,
     meta: { requiresAuth: true },
   },
-
   {
     path: "/",
     name: "home",
@@ -106,6 +118,7 @@ const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
 });
+
 router.beforeEach((to, from, next) => {
   const requiresAuth = to.matched.some((record) => record.meta.requiresAuth);
   const token = localStorage.getItem("token") || (store && store.state.token);
@@ -115,4 +128,5 @@ router.beforeEach((to, from, next) => {
     next();
   }
 });
+
 export default router;

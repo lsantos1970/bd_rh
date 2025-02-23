@@ -1,4 +1,4 @@
-<!-- filepath: /seu-projeto/src/views/Login.vue -->
+<!-- filepath: /src/views/Login.vue -->
 <template>
   <section class="login-section">
     <div class="container">
@@ -22,7 +22,14 @@
             required
           />
         </div>
-        <button type="submit" class="btn btn-primary mt-3">Entrar</button>
+        <div class="mt-3">
+          <!-- botão entrar -->
+          <v-btn type="submit" class="btn btn-primary mt-3"> Entrar </v-btn>
+          <!-- Link para a página de registo -->
+          <router-link to="/register">
+            <v-btn class="btn btn-info btn-sm ml-2"> Novo User </v-btn>
+          </router-link>
+        </div>
       </form>
     </div>
   </section>
@@ -46,12 +53,11 @@ export default {
           nap_id: this.nap_id,
           password: this.password,
         });
-        // Armazena o token no localStorage (pode ser também no Vuex)
+        // Armazena o token no localStorage (ou Vuex)
         localStorage.setItem("token", response.data.token);
-        // Armazena também os dados do usuário se necessário
+        // Armazena também dados do usuário se necessário
         localStorage.setItem("user", JSON.stringify(response.data.user));
-
-        // Redireciona para a página inicial ou rota protegida
+        // Redireciona para a rota protegida
         this.$router.push({ name: "Home" });
       } catch (error) {
         console.error("Erro ao fazer login:", error);
