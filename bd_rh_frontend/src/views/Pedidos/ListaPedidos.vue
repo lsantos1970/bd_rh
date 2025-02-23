@@ -5,7 +5,7 @@
         <v-btn class="btn btn-success mb-3">Adicionar Pedido</v-btn>
       </router-link>
 
-      <v-btn @click="exportarExcel" class="btn btn-primary mb-2">
+      <v-btn @click="exportarExcel" class="btn btn-success mb-3">
         Exportar Excel
       </v-btn>
 
@@ -15,7 +15,6 @@
       <table class="table table-striped">
         <thead class="thead-dark">
           <tr>
-            <th>_id</th>
             <th>NAP</th>
             <th>Nome Completo</th>
             <th>Tipo Pedido</th>
@@ -26,27 +25,26 @@
         </thead>
         <tbody>
           <tr v-for="pedido in pedidos" :key="pedido._id">
-            <td>{{ pedido._id }}</td>
             <td>{{ pedido.NAP_id }}</td>
             <td>{{ pedido.nome_completo }}</td>
             <td>{{ pedido.tipo_pedido }}</td>
             <td>{{ formataData(pedido.data_inicio) }}</td>
             <td>{{ formataData(pedido.data_fim) }}</td>
             <td>
-              <!-- Exemplo de botão remover -->
+              <!-- botão para “ver” ou “editar” -->
+              <router-link
+                :to="{ name: 'EditPedido', params: { id: pedido._id } }"
+              >
+                <v-btn class="btn btn-success mb-3">Editar</v-btn>
+              </router-link>
+
+              <!-- botão remover -->
               <v-btn
-                class="btn btn-danger btn-sm"
+                class="btn btn-success mb-3"
                 @click="removePedido(pedido._id)"
               >
                 Remover
               </v-btn>
-
-              <!-- Exemplo de botão para “ver” ou “editar” -->
-              <router-link
-                :to="{ name: 'EditPedido', params: { id: pedido._id } }"
-              >
-                <v-btn class="btn btn-info btn-sm ml-2">Editar</v-btn>
-              </router-link>
             </td>
           </tr>
         </tbody>

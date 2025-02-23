@@ -14,7 +14,7 @@
       <router-link to="/formacoes">Formação</router-link> |
       <router-link to="/ausencias">Ausências</router-link> |
       <router-link to="/avaliacao">Avaliação</router-link> |
-      <router-link to="/login">Login</router-link> |
+      <a href="#" @click.prevent="logout">Logout</a> |
     </nav>
     <!-- Layout principal do Vuetify -->
     <v-main>
@@ -26,3 +26,19 @@
     </v-main>
   </v-app>
 </template>
+<script>
+export default {
+  name: "LogOut",
+  methods: {
+    logout() {
+      // Remove token e dados do usuário
+      localStorage.removeItem("token");
+      localStorage.removeItem("user");
+      // Exibe mensagem de logout
+      alert("Logout efetuado com sucesso!");
+      // Redireciona para a página de login
+      this.$router.push({ name: "Login" });
+    },
+  },
+};
+</script>

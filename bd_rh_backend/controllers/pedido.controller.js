@@ -12,6 +12,7 @@ async function criarPedido(req, res) {
 
 // Listar todos os pedidos
 async function listarPedidos(req, res) {
+  console.log(req.user.role);
   try {
     let pedidos;
     if (req.user.role === "admin") {

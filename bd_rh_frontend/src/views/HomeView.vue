@@ -5,7 +5,12 @@
     <!-- Título principal da aplicação -->
     <h1>Benvindo à app RH</h1>
   </div>
-
+  <!-- Seção para Pedidos -->
+  <h2>Pedidos</h2>
+  <!-- Link para adicionar um novo pedido -->
+  <router-link to="/pedidos/add">Adicionar Pedidos</router-link> |
+  <!-- Link para visualizar a lista de pedidos -->
+  <router-link to="/pedidos">Lista de Pedidos</router-link> |
   <!-- Seção para Colaboradores -->
   <h2>Colaboradores</h2>
   <!-- Link para adicionar um novo colaborador -->
@@ -33,11 +38,4 @@
   <router-link to="/">Adicionar Avaliação</router-link> |
   <!-- Link para visualizar a lista de avaliações -->
   <router-link to="/">Lista de Avaliação</router-link> |
-
-  <!-- Seção para Pedidos -->
-  <h2>Pedidos</h2>
-  <!-- Link para adicionar um novo pedido -->
-  <router-link to="/pedidos/add">Adicionar Pedidos</router-link> |
-  <!-- Link para visualizar a lista de pedidos -->
-  <router-link to="/pedidos">Lista de Pedidos</router-link> |
 </template>

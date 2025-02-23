@@ -33,7 +33,7 @@ router.post("/register", async (req, res) => {
 
     res.status(201).json({
       message: "User registado com sucesso.",
-      user: { nap_id: newUser.nap_id, nome: newUser.nome, permissoes: newUser.permissoes },
+      user: { nap_id: newUser.nap_id, nome: newUser.nome, role: newUser.role },
     });
   } catch (error) {
     console.error("Erro no registo:", error);
@@ -57,12 +57,12 @@ router.post("/login", async (req, res) => {
     }
 
     const token = jwt.sign(
-      { nap_id: user.nap_id, nome: user.nome, permissoes: user.permissoes },
+      { nap_id: user.nap_id, nome: user.nome, role: user.role },
       config.jwtSecret,
       { expiresIn: config.jwtExpiresIn }
     );
 
-    res.json({ token, user: { nap_id: user.nap_id, nome: user.nome, permissoes: user.permissoes } });
+    res.json({ token, user: { nap_id: user.nap_id, nome: user.nome, role: user.role } });
   } catch (error) {
     console.error("Erro de login:", error);
     res.status(500).json({ message: "Erro interno." });

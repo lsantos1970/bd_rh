@@ -5,7 +5,6 @@ import AddColaborador from "@/views/Colaboradores/AddColaborador.vue";
 import AdminView from "@/components/AdminView.vue";
 import EditColaborador from "@/views/Colaboradores/EditColaborador.vue";
 import BaseView from "@/components/BaseView.vue";
-import AboutView from "@/components/AboutView.vue";
 // import FormacaoView from "@/views/Formacao/FormacaoView.vue";
 import AusenciasView from "@/views/Ausencias/AusenciasView.vue";
 import AvaliacaoView from "@/views/Avaliacao/AvaliacaoView.vue";
@@ -43,74 +42,82 @@ const routes = [
     component: Home,
   },
   {
-    path: "/about",
-    name: "about",
-    component: AboutView,
-  },
-  {
     path: "/admin",
     name: "admin",
     component: AdminView,
+    meta: { requiresAuth: true },
   },
   {
     path: "/colaboradores",
     name: "colaboradores",
     component: ListaColaboradores,
+    meta: { requiresAuth: true },
   },
   {
     path: "/colaborador/add",
     name: "AddColaborador",
     component: AddColaborador,
+    meta: { requiresAuth: true },
   },
   {
     path: "/colaborador/edit/:id",
     name: "EditColaborador",
     component: EditColaborador,
+    meta: { requiresAuth: true },
   },
   {
     path: "/base",
     name: "BaseView",
     component: BaseView,
+    meta: { requiresAuth: true },
   },
   {
     path: "/ausencias",
     name: "AusenciasView",
     component: AusenciasView,
+    meta: { requiresAuth: true },
   },
   {
     path: "/avaliacao",
     name: "AvaliacaoView",
     component: AvaliacaoView,
+    meta: { requiresAuth: true },
   },
   {
     path: "/pedidos",
     name: "ListaPedidos",
     component: ListaPedidos,
+    meta: { requiresAuth: true },
   },
   {
     path: "/pedidos/add",
     name: "AddPedido",
     component: AddPedido,
+    meta: { requiresAuth: true },
   },
   {
     path: "/pedidos/:id/edit",
     name: "EditPedido",
     component: EditPedido,
+    meta: { requiresAuth: true },
   },
   {
     path: "/formacoes",
     name: "ListaFormacoes",
     component: () => import("@/views/Formacao/ListaFormacoes.vue"),
+    meta: { requiresAuth: true },
   },
   {
     path: "/formacao/add",
     name: "AddFormacao",
     component: () => import("@/views/Formacao/AddFormacao.vue"),
+    meta: { requiresAuth: true },
   },
   {
     path: "/formacao/edit/:id",
     name: "EditFormacao",
     component: () => import("@/views/Formacao/EditFormacao.vue"),
+    meta: { requiresAuth: true },
   },
 ];
 

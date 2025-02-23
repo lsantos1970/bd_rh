@@ -27,7 +27,7 @@
           <v-btn type="submit" class="btn btn-primary mt-3"> Entrar </v-btn>
           <!-- Link para a página de registo -->
           <router-link to="/register">
-            <v-btn class="btn btn-info btn-sm ml-2"> Novo User </v-btn>
+            <v-btn class="btn btn-primary mt-3"> Novo User </v-btn>
           </router-link>
         </div>
       </form>
@@ -55,7 +55,7 @@ export default {
         });
         // Armazena o token no localStorage (ou Vuex)
         localStorage.setItem("token", response.data.token);
-        // Armazena também dados do usuário se necessário
+        // Armazena também dados do user se necessário
         localStorage.setItem("user", JSON.stringify(response.data.user));
         // Redireciona para a rota protegida
         this.$router.push({ name: "Home" });
