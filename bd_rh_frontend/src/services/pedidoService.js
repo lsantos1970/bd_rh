@@ -1,9 +1,5 @@
-//import axios from "axios";
+// importa endereço backend
 import api from "./api";
-
-// endereço backend
-//const API_URL = "http://localhost:3000/api"; // Localhost
-//const API_URL = "http://52.172.207.146:3000/api"; // VM AZURE
 
 // Lista todos os pedidos
 export async function listarPedidos() {

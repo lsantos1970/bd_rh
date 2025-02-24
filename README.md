@@ -23,10 +23,11 @@ bd_rh/
 
 ## Principais Funcionalidades
 
+- **Login/Logout**: Users com permissões distintas "admin" e "colaborador".
 - **Gestão de Colaboradores**: Criação, listagem, edição e remoção de colaboradores.
 - **Módulo de Ausências**: Registo e acompanhamento de ausências e férias.
 - **Formação**: Visualização e gestão de formações agendadas.
-- (Adicione aqui outras funcionalidades relevantes.)
+- **Pedidos**: Visualização e gestão dos pedidos dos colaboradores.
 
 ## Commits Recentes
 
